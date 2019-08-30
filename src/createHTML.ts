@@ -2,11 +2,12 @@ import FS from 'fs-extra';
 import path from 'path';
 import ejs from 'ejs';
 import { ISifou } from './utils/getSifou';
+import moment from 'moment';
 
 import { IToutiaoData, I36KrData } from './utils'
 
 const rootPath: string = path.join(__dirname, 'html');
-const dateStr: string = `${new Date().getFullYear()}/${(new Date().getMonth()) + 1}/${new Date().getDate()}`;
+const dateStr: string = `${moment().format('YYYY/MM/DD HH:mm')}`;
 
 export interface ICreateFollowersHTML {
   html_url: string;
